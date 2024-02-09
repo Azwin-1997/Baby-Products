@@ -7,7 +7,7 @@ const [products, setProducts] = useState([])
 console.log(products);
 
 useEffect(()=>{
-fetch("http://localhost:3003/products")
+fetch("http://localhost:3030/products")
 .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('Error fetching products:', error));
@@ -17,13 +17,13 @@ fetch("http://localhost:3003/products")
     {
     products.map((products)=>(
 <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={products.productimage} />
       <Card.Body>
         <Card.Title>{products.title}</Card.Title>
         <Card.Text>
           {products.decsription}
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Add to Cart</Button>
       </Card.Body>
     </Card>
     ))

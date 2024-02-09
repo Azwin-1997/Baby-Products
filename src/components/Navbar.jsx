@@ -4,8 +4,20 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate , Link} from 'react-router-dom';
+
+
 
 function NavScrollExample() {
+
+  const navigate = useNavigate()
+
+const HandleClick = ()=>{
+
+  navigate('login')
+
+}
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -19,8 +31,8 @@ function NavScrollExample() {
           >
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Shop</Nav.Link>
-            <Nav.Link href="#action2">About Us</Nav.Link>
-            <Nav.Link href="#action2">Testimonial</Nav.Link>
+            {/* <Nav.Link href="#action2">About Us</Nav.Link> */}
+            {/* <Nav.Link href="#action2">Testimonial</Nav.Link> */}
             <Nav.Link href="#action2">Contact Us</Nav.Link>     
           </Nav>
           <Form className="d-flex" style={{ marginLeft: '-30px' }}>
@@ -33,6 +45,7 @@ function NavScrollExample() {
             <Button variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
+        <Button onClick={HandleClick} variant="outline-primary">Login</Button>{' '}
       </Container>
     </Navbar>
   );
